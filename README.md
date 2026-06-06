@@ -1,6 +1,6 @@
-
-  #US CENSUS BUREAU INTEGRATION FOR DJANGO-CRM
-  #Neighborhood demographic data on Company, Contact, and Lead profiles
+  US CENSUS BUREAU INTEGRATION FOR DJANGO-CRM
+  Neighborhood demographic data on Company, Contact, and Lead profiles
+================================================================================
 
 
 OVERVIEW
