@@ -77,6 +77,9 @@ class Contact(BaseCounterparty, BaseContact, Base1):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}, {self.company}, {self.country}"
+
+    def get_absolute_url(self):  
+        return reverse('admin:crm_contact_change', args=(self.id,))
     census_median_age = models.DecimalField(blank=True, null=True, max_digits=4, decimal_places=1, verbose_name="Median age")
     census_per_capita_income = models.IntegerField(blank=True, null=True, verbose_name="Per capita income")
     census_pct_poverty = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="% below poverty level")
@@ -87,5 +90,3 @@ class Contact(BaseCounterparty, BaseContact, Base1):
     census_mean_commute_minutes = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="Mean commute (minutes)")
     census_pct_limited_english = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="% limited English proficiency")
     census_pct_uninsured = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="% without health insurance")
-    def get_absolute_url(self):  
-        return reverse('admin:crm_contact_change', args=(self.id,))
