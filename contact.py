@@ -77,6 +77,15 @@ class Contact(BaseCounterparty, BaseContact, Base1):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}, {self.company}, {self.country}"
-    
+    census_median_age = models.DecimalField(blank=True, null=True, max_digits=4, decimal_places=1, verbose_name="Median age")
+    census_per_capita_income = models.IntegerField(blank=True, null=True, verbose_name="Per capita income")
+    census_pct_poverty = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="% below poverty level")
+    census_pct_college = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="% bachelor's degree or higher")
+    census_pct_unemployed = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="Unemployment rate %")
+    census_median_home_value = models.IntegerField(blank=True, null=True, verbose_name="Median home value")
+    census_pct_owner_occupied = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="% owner-occupied housing")
+    census_mean_commute_minutes = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="Mean commute (minutes)")
+    census_pct_limited_english = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="% limited English proficiency")
+    census_pct_uninsured = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=1, verbose_name="% without health insurance")
     def get_absolute_url(self):  
         return reverse('admin:crm_contact_change', args=(self.id,))
